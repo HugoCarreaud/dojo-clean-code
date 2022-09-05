@@ -107,7 +107,7 @@ def handle_show_account(accounts):
 def handle_delete_account(list_accounts, password):
     nbr_accounts = len(list_accounts)
     account_name = prompt_account_name()
-    list_accounts=delete_account_from_list(list_accounts, account_name)
+    list_accounts = delete_account_from_list(list_accounts, account_name)
 
     if len(list_accounts) == nbr_accounts:
         console.print("No accounts were found matching this website name!")
@@ -128,8 +128,10 @@ def prompt_account_name():
 def delete_account_from_list(list_accounts, name_account):
     return [account for account in list_accounts if account['website_name'] != name_account]
 
+
 def delete_all_account(password):
-    save_account_list([],password)
+    save_account_list([], password)
+
 
 def main():
     files = os.listdir()
